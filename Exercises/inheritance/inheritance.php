@@ -39,6 +39,33 @@
         }
     }
 
+    class Employee extends User {
+        private $salary;
+        private $department;
+
+        public function __construct($first_name, $middle_name, $last_name, $salary, $department){
+            parent::__construct($first_name, $middle_name, $last_name);
+            $this->salary = $salary;
+            $this->department = $department;
+        }
+
+        public function getSalary(){
+            return $this->salary;
+        }
+
+        public function setSalary($salary){
+            $this->salary = $salary;
+        }
+
+        public function getDepartment(){
+            return $this->department;
+        }
+
+        public function setDepartment($department){
+            $this->department = $department;
+        }
+    }
+
     //creating an instance of Employee
     $employees = array();
     array_push($employees, new Employee("Jerick Royce", "Delcoro", "Cumayas", 45000, 'Software Development'));
